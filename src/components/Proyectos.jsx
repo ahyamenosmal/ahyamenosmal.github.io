@@ -150,7 +150,7 @@ export default function Proyectos() {
   return (
     <section
       id="proyectos"
-      className="bg-[#F1FFFD] py-8 md:py-12 text-[#2B3237] text-center"
+      className="bg-[#D9F0ED] py-8 md:py-12 text-[#2B3237] text-center"
     >
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-xl sm:text-2xl font-bold mb-8 bg-[#379490] shadow-md text-[#F4F4F4] inline-block px-4 py-1">

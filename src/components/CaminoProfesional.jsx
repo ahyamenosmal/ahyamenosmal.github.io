@@ -24,7 +24,7 @@ export default function CaminoProfesional() {
               buscando desafíos que me hagan crecer.
             </p>
             <div className="grid grid-cols-4 gap-1 text-xs text-[#379490] mt-2">
-              {["HTML", "CSS", "JavaScript", "React", "Angular", "Node.js", "Express", "SQL"].map((tech, i) => (
+              {["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "Express", "SQL"].map((tech, i) => (
                 <span key={i} className="bg-[#F1FFFD] px-2 py-1 rounded-full shadow-sm">
                   {tech}
                 </span>

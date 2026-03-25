@@ -3,7 +3,7 @@ import fotoperfil from "../assets/image/fotoperfilverylow.jpg";
 
 export default function SobreMi() {
   return (
-    <section id="sobre-mi" className="bg-[#F1FFFD] py-6 md:py-12">
+    <section id="sobre-mi" className="bg-[#D9F0ED] py-6 md:py-12">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Móvil: orden HTML → Desktop: foto a la izquierda */}
         <div className="flex flex-col md:flex-row-reverse items-start md:items-center gap-4 sm:gap-6 md:gap-10">

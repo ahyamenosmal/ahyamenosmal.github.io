@@ -2,7 +2,7 @@ import { FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 export default function Contacto() {
   return (
-    <section id="contacto" className="py-8 md:py-12 bg-[#F1FFFD] text-center">
+    <section id="contacto" className="py-8 md:py-12 bg-[#D9F0ED] text-center">
       <h2 className="text-2xl font-bold mb-6 bg-[#379490] text-[#F4F4F4] shadow-md inline-block px-5 py-1 animate-fade-in-up ease-out duration-700">
         ¿Te gustaría trabajar conmigo?
       </h2>
