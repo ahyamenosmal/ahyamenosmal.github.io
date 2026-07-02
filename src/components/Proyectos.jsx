@@ -7,10 +7,20 @@ import UXRESEARCH from "../assets/image/UXRESEARCH.jpg";
 import SIGO from "../assets/image/SIGO.jpg";
 import ESTUDIO from "../assets/image/ESTUDIO.jpg";
 
+const TagLine = ({ tags }) => {
+  return (
+    <div className="mt-4 pt-3 border-t border-[#379490]/20">
+      <p className="text-xs md:text-sm tracking-wide text-[#379490] leading-relaxed">
+        {tags.join(" / ")}
+      </p>
+    </div>
+  );
+};
+
 export default function Proyectos() {
   const projectList = [
     {
-      title: "WEB - SIGO INDUSTRIAL",
+      title: "SIGO INDUSTRIAL",
       image: SIGO,
       desc: (
         <>
@@ -27,7 +37,6 @@ export default function Proyectos() {
         "React",
         "JavaScript",
         "UX/UI",
-        "Next.js",
         "Data Visualization",
         "Frontend",
         "Dashboards",
@@ -35,7 +44,7 @@ export default function Proyectos() {
       link: "/pdfs/sigo.pdf",
     },
     {
-      title: "WEB – ESTUDIO JURÍDICO",
+      title: "ESTUDIO JURÍDICO",
       image: ESTUDIO,
       desc: (
         <>
@@ -59,18 +68,15 @@ export default function Proyectos() {
       link: "https://web-estudio-juridico.vercel.app/",
     },
     {
-      title: "SCRIPTA - BOOKSTORE",
+      title: "SCRIPTA BOOKSTORE",
       image: SCRIPTA,
       desc: (
         <>
-          <strong>
-            Proyecto final Bootcamp Full Stack:
-            <br />
-            Tienda E-commerce para librería.
-          </strong>
+          <strong>Proyecto final Bootcamp Full Stack.</strong>
           <br />
-          Desarrollé una plataforma completa con autenticación JWT, carrito,
-          favoritos, filtros y panel admin, integrando{" "}
+          Tienda e-commerce para librería. Desarrollé una plataforma completa
+          con autenticación JWT, carrito, favoritos, filtros y panel admin,
+          integrando{" "}
           <strong>
             React, Node, Express y PostgreSQL con diseño UX/UI centrado en el
             usuario.
@@ -81,7 +87,7 @@ export default function Proyectos() {
       ),
       tags: [
         "UX/UI",
-        "Javascript",
+        "JavaScript",
         "React",
         "Express",
         "Node.js",
@@ -95,16 +101,12 @@ export default function Proyectos() {
       image: UC,
       desc: (
         <>
-          <strong>
-            Diseño de plataforma interna
-            <br />
-            UC Christus – Salud mental
-          </strong>
+          <strong>Diseño de plataforma interna para salud mental.</strong>
           <br />
           Proyecto realizado como pasantía en Red UC: diseño de flujos para
           pacientes y mejora de la experiencia de usuario en la app
           institucional, creando una herramienta digital para la prevención y
-          autocuidado de los colaboradores, con foco en{" "}
+          autocuidado de colaboradores, con foco en{" "}
           <strong>
             UX Research, prototipado y diseño centrado en el bienestar laboral.
           </strong>
@@ -126,7 +128,7 @@ export default function Proyectos() {
       image: UXRESEARCH,
       desc: (
         <>
-          <strong>Investigación de login en banca digital (BancoEstado)</strong>
+          <strong>Investigación de login en banca digital.</strong>
           <br />
           Investigación de experiencia de usuario en banca digital: realicé{" "}
           <strong>
@@ -150,14 +152,18 @@ export default function Proyectos() {
   return (
     <section
       id="proyectos"
-      className="bg-[#D9F0ED] py-8 md:py-12 text-[#2B3237] text-center"
+      className="relative py-10 md:py-14 text-[#2B3237] text-center bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/fondotextura.png')" }}
     >
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-xl sm:text-2xl font-bold mb-8 bg-[#379490] shadow-md text-[#F4F4F4] inline-block px-4 py-1">
+      {/* Overlay claro para mantener estética */}
+      <div className="absolute inset-0 bg-[#D9F0ED]/80"></div>
+
+      <div className="relative container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-xl sm:text-2xl font-bold mb-10 bg-[#379490] shadow-md text-[#F4F4F4] inline-block px-4 py-1">
           PROYECTOS
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-wrap justify-center gap-7">
           {projectList.map(({ title, image, desc, tags, link }) => (
             <a
               href={link || "#"}
@@ -166,25 +172,30 @@ export default function Proyectos() {
               rel="noopener noreferrer"
               tabIndex={0}
               aria-label={`Abrir proyecto ${title}`}
-              className="w-full sm:max-w-[24rem] flex"
+              className="w-full sm:max-w-[24rem] flex group"
               style={{ textDecoration: "none" }}
             >
-              <div
-                className="bg-[#F1FFFD] rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 shadow-md flex flex-col w-full"
-                style={{ minHeight: 420 }}
+              <article
+                className="bg-[#F1FFFD]/95 overflow-hidden transition-all duration-300 ease-out 
+                hover:-translate-y-1 hover:shadow-xl shadow-md flex flex-col w-full"
+                style={{ minHeight: 430 }}
               >
-                <img
-                  src={image}
-                  alt={`Proyecto ${title}`}
-                  className="w-full h-44 md:h-48 object-cover object-center"
-                />
+                <div className="overflow-hidden">
+                  <img
+                    src={image}
+                    alt={`Proyecto ${title}`}
+                    className="w-full h-44 md:h-48 object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
 
-                <div className="px-6 py-4 grid grid-rows-[auto,1fr,auto] gap-2 flex-1">
-                  <div>
-                    <h3 className="font-bold tracking-wide text-lg mb-3 bg-[#379490] text-[#fafafa] shadow-sm inline-block px-4 py-1 whitespace-normal break-words max-w-full">
+                <div className="px-6 py-5 grid grid-rows-[auto,1fr,auto] gap-3 flex-1">
+                  <header>
+                    <h3 className="font-extrabold tracking-tight text-lg text-[#2B3237] mb-2">
                       {title}
                     </h3>
-                  </div>
+
+                    <div className="w-10 h-[2px] bg-[#379490] mx-auto"></div>
+                  </header>
 
                   <div className="flex items-start justify-center">
                     <p className="text-sm leading-relaxed mx-auto text-center whitespace-normal break-words">
@@ -192,24 +203,15 @@ export default function Proyectos() {
                     </p>
                   </div>
 
-                  <div>
-                    <div className="flex flex-wrap justify-center gap-1 text-xs text-[#379490] mb-3">
-                      {tags.map((tag, i) => (
-                        <span
-                          key={i}
-                          className="bg-[#D9F0ED] px-2 py-1 rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                  <footer>
+                    <TagLine tags={tags} />
 
-                    <span className="self-end text-[#379490] font-semibold text-sm block text-right pr-1 hover:text-[#246967]">
-                      Ir al proyecto
+                    <span className="mt-4 text-[#379490] font-bold text-sm block text-right pr-1 transition-colors duration-300 group-hover:text-[#246967]">
+                      Ir al proyecto →
                     </span>
-                  </div>
+                  </footer>
                 </div>
-              </div>
+              </article>
             </a>
           ))}
         </div>

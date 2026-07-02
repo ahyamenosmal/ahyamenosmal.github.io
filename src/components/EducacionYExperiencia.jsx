@@ -70,40 +70,41 @@ export default function EducacionExperiencia() {
   return (
     <section
       id="educacion"
-      className="bg-[#379490] py-8 md:py-12 text-[#D9F0ED] text-center"
+      className="relative py-8 md:py-12 text-[#D9F0ED] text-center bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/fondofondo.png')" }}
     >
-      <h2 className="text-2xl font-bold mb-12 bg-[#F4F4F4] shadow-md text-[#379490] inline-block px-4 py-1">
-        EDUCACIÓN Y EXPERIENCIA
-      </h2>
+      <div className="absolute inset-0 bg-[#379490]/40"></div>
 
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 md:gap-20 px-5 text-left">
-        
-        {/* EDUCACIÓN */}
-        <div className="w-full md:w-1/2 bg-[#F1FFFD] text-[#2B3237] shadow-md rounded-lg p-6 space-y-6 transition-transform duration-300 hover:scale-105">
-          {educacion.map(({ icon, year, title, desc }, idx) => (
-            <div key={idx} className="space-y-1">
-              <p className="flex items-center text-sm font-medium gap-2 text-[#379490]">
-                {icon} <span>{year}</span>
-              </p>
-              <h3 className="font-semibold text-[#2B3237]">{title}</h3>
-              <p className="text-sm">{desc}</p>
-            </div>
-          ))}
+      <div className="relative">
+        <h2 className="text-2xl font-bold mb-12 bg-[#F4F4F4] shadow-md text-[#379490] inline-block px-4 py-1">
+          EDUCACIÓN Y EXPERIENCIA
+        </h2>
+
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 md:gap-20 px-5 text-left">
+          <div className="w-full md:w-1/2 bg-[#F1FFFD] text-[#2B3237] shadow-md rounded-lg p-6 space-y-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl">
+            {educacion.map(({ icon, year, title, desc }, idx) => (
+              <div key={idx} className="space-y-1">
+                <p className="flex items-center text-sm font-medium gap-2 text-[#379490]">
+                  {icon} <span>{year}</span>
+                </p>
+                <h3 className="font-semibold text-[#2B3237]">{title}</h3>
+                <p className="text-sm">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="w-full md:w-1/2 bg-[#F1FFFD] text-[#2B3237] shadow-md rounded-lg p-6 space-y-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl">
+            {experiencia.map(({ icon, year, title, desc }, idx) => (
+              <div key={idx} className="space-y-1">
+                <p className="flex items-center text-sm font-medium gap-2 text-[#379490]">
+                  {icon} <span>{year}</span>
+                </p>
+                <h3 className="font-semibold text-[#2B3237]">{title}</h3>
+                <p className="text-sm">{desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
-
-        {/* EXPERIENCIA */}
-        <div className="w-full md:w-1/2 bg-[#F1FFFD] text-[#2B3237] shadow-md rounded-lg p-6 space-y-6 transition-transform duration-300 hover:scale-105">
-          {experiencia.map(({ icon, year, title, desc }, idx) => (
-            <div key={idx} className="space-y-1">
-              <p className="flex items-center text-sm font-medium gap-2 text-[#379490]">
-                {icon} <span>{year}</span>
-              </p>
-              <h3 className="font-semibold text-[#2B3237]">{title}</h3>
-              <p className="text-sm">{desc}</p>
-            </div>
-          ))}
-        </div>
-
       </div>
     </section>
   );
